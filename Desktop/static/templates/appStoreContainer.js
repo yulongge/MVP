@@ -1,0 +1,56 @@
+/**
+ * Created by Administrator on 2014/10/11.
+ */
+define(function(){
+var strVar = "";
+    strVar += "<div class=\"desktop_window\" style=\"width:0px; height:0;\">";
+    strVar += "<div class=\"window_header\">";
+    strVar += "  <div class=\"window_header_title window_header_title1\">应用中心<\/div>";
+    strVar += "  <div class=\"window_header_oper\"><a href=\"javascript:void(0)\" class=\"oper2\" title=\"最大化\"><\/a><a href=\"javascript:void(0)\" class=\"oper3\" title=\"关闭\"><\/a><\/div>";
+    strVar += "<\/div>";
+    strVar += "<div class=\"window_main\">";
+    strVar += "  <div class=\"window_left\">";
+    strVar += "    <div class=\"widnow_search\">";
+    strVar += "      <div class=\"widnow_search_bg\"><span class=\"search_input\">";
+    strVar += "        <input name=\"search_keywords\" type=\"text\" class=\"input\"/>";
+    strVar += "        <\/span><a href=\"javascript:void(0)\" class=\"search_icon\"><\/a><!--<a href=\"javascript:void(0)\" class=\"search_del\"><\/a>--><\/div>";
+    strVar += "    <\/div>";
+    strVar += "    <div class=\"window_menu\">";
+    strVar += "      <ul class=\"widnow_menu_list appstore_menu_list\">";
+    strVar += "      <\/ul>";
+    strVar += "    <\/div>";
+    strVar += "  <\/div>";
+    strVar += "  <div class=\"window_right\">";
+    strVar += "    <div class=\"window_wrapper\">";
+    strVar += "      <div class=\"window_module1\">";
+    strVar += "        <div class=\"window_tab\">";
+    strVar += "          <ul class=\"window_tab_menu\">";
+    strVar += "          <\/ul>";
+    strVar += "          <div class=\"window_tab_box\">";
+    strVar += "            <div class=\"window_tab_content\">";
+    strVar += "              <div class=\"window_con_item\">";
+    strVar += "                <div class=\"window_con_result\">查找包含“<span class=\"key\">***<\/span>”的结果共<span class=\"count\">0<\/span>个<\/div>";
+    strVar += "                <div class=\"window_con_oper\">";
+    strVar += "                  <div class=\"window_con_deploy\" style='display: none;'><a href=\"javascript:void(0)\">未配置<\/a><\/div>";
+    strVar += "                  <div class=\"window_con_line\" style='display: none;'>|<\/div>";
+    strVar += "                  <div class=\"window_con_view\"><span class=\"view2\"><a href=\"javascript:void(0)\" class=\"view_list\"><\/a><a href=\"javascript:void(0)\" class=\"view_card\"><\/a><\/span><\/div>";
+    strVar += "                <\/div>";
+    strVar += "              <\/div>";
+    strVar += "              <div class=\"window_con_height\">";
+    strVar += "                <div class=\"window_view_info window_view_list store_list\">";
+    strVar += "                  <ul class=\"window_con_list appstore_list_app\">";
+    strVar += "                  <\/ul>";
+    strVar += "                <\/div>";
+    strVar += "                <div class=\"window_view_info window_view_list store_search\" style=\"display:none;\">";
+    strVar += "                <\/div>";
+    strVar += "              <\/div>";
+    strVar += "            <\/div>";
+    strVar += "          <\/div>";
+    strVar += "        <\/div>";
+    strVar += "      <\/div>";
+    strVar += "    <\/div>";
+    strVar += "  <\/div>";
+    strVar += "<\/div>";
+    strVar += "";
+    return strVar;
+});

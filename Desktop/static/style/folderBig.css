@@ -1,0 +1,15 @@
+﻿@import url("folder.css");
+
+.g_file .title{ height:41px; line-height:41px; }
+.g_file .title .text_name{ font-size:16px;}
+.desktop_main .control_btn_list .layer_button .layer_column{ height:24px }
+.desktop_main .control_btn_list .layer_button .layer_column h4{ line-height:28px;}
+.desktop_main .control_btn_list .layer_button .layer_column p img{ width:25px;height:25px; }
+
+.desktop_layer .FolderMin .layer_column .FolderBox { width:60px;height:60px; }
+.desktop_layer .FolderBigBox .title{ height:41px; line-height:41px; }
+.desktop_layer .FolderMin .layer_column .FolderBox div{ width:20px; height:20px; }
+.desktop_layer .FolderBigBox .title .titleZC{ width:120px; height:40px; line-height:30px; font-size:16px; }
+
+.g_file .title .buts .pack_up{ margin-top:4px;}
+.g_file .title .btn_lock { top:14px;}

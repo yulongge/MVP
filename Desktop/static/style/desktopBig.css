@@ -1,0 +1,119 @@
+@import url("desktop.css");
+
+.desktop_slide { width:40px; }
+.desktop_slide_left { left:0; background-image:url(../images/desktop_slide_icon01_big.png);}
+.desktop_slide_left:hover { background-image:url(../images/desktop_slide_icon03_big.png);}
+.desktop_slide_right { right:0; background-image:url(../images/desktop_slide_icon02_big.png);}
+.desktop_slide_right:hover { background-image:url(../images/desktop_slide_icon04_big.png);}
+
+.desktop_window .window_header { height:43px; line-height:36px; }
+.desktop_window .window_header_title{ font-size:18px; line-height:43px;}
+.desktop_window .window_header_oper a { height:15px;}
+.desktop_window .window_header_oper .oper2 { background:url(../images/desktop_header_oper2_big.png) no-repeat 0 0;  width:15px;}
+.desktop_window .window_header_oper .oper2:hover { background:url(../images/desktop_header_oper2_big.png) no-repeat 0 -20px; }
+.desktop_window .window_header_oper .oper2:active { background:url(../images/desktop_header_oper2_big.png) no-repeat 0 -40px; }
+.desktop_window .window_header_oper .oper3 { background:url(../images/desktop_header_oper3_big.png) no-repeat 0 0;  width:15px;}
+.desktop_window .window_header_oper .oper3:hover { background:url(../images/desktop_header_oper3_big.png) no-repeat 0 -20px; }
+.desktop_window .window_header_oper .oper3:active { background:url(../images/desktop_header_oper3_big.png) no-repeat 0 -40px; }
+
+.desktop_button a,.desktop_button span { width:53px; height:53px;}
+.desktop_button span { background:url(../images/desktop_button_big.png) no-repeat;}
+.desktop_button .button_add { background-position:0 0;}
+.desktop_button a:hover .button_add { background-position:-63px 0;}
+.desktop_button .button_del { background-position:0 -63px;}
+.desktop_button a:hover .button_del { background-position:-63px -63px;}
+.desktop_button a .button_del_hover { background-position:-63px -63px;}
+
+.desktop_bullets a,.desktop_bullets span { width:35px; height:35px;}
+.desktop_bullets span { background:url(../images/desktop_bullets_big.png) no-repeat 0 -45px;}
+
+.desktop_bullets .bullets_add { background-position:0 0;}
+.desktop_bullets a:hover .bullets_add { background-position:-45px 0;}
+.desktop_bullets a.p_active span {background-position:-45px -45px;}
+.desktop_bullets a.p_droppable span {background-position:-45px -45px;}
+
+.desktop_main .desktop_layer .layer_button .layer_column { width:75px; height:104px; }
+.desktop_main .desktop_layer .layer_button .layer_column p img { width:60px; height:60px; }
+.desktop_main .desktop_layer .layer_button .layer_column h4 { font-size:15px;}
+.desktop_layer .layer_button .layer_column .sign_lock { background: url(../images/desktop_apply_sign_lock_big.png) no-repeat 0 0; height:60px; top:5px; width:60px; margin-left:2px;}
+
+.desktop_popmenu ul { width:190px; }
+.desktop_popmenu ul li h3 span { right:10px; top:0; margin:12px 10px 0 0; background:url(../images/desktop_arrow_big.png) no-repeat 0 0; width:8px; height:12px;}
+.desktop_popmenu ul li { height:35px; line-height:32px; }
+.desktop_popmenu ul li a { font-size:15px; height:35px; line-height:32px; margin-left:15px; background:url(../images/desktop_popmenu_big.png) no-repeat; padding-left:30px;}
+.desktop_popmenu ul li a.popmenu_zlzm { background-position:0 -154px;}
+.desktop_popmenu ul li:hover a.popmenu_zlzm { background-position:0 -475px;} 
+.desktop_popmenu ul li a.popmenu_aywfz { background-position:0 -34px;}
+.desktop_popmenu ul li:hover a.popmenu_aywfz { background-position:0 -354px;}
+.desktop_popmenu ul li a.popmenu_ghpf { background-position:0 -233px;}
+.desktop_popmenu ul li:hover a.popmenu_ghpf { background-position:0 -554px;}
+.desktop_popmenu ul li a.popmenu_xjwjj { background-position:0 -74px;}
+.desktop_popmenu ul li:hover a.popmenu_xjwjj { background-position:0 -395px;}
+.desktop_popmenu ul li a.popmenu_xjlrrw { background-position:0 -98px;}
+.desktop_popmenu ul li:hover a.popmenu_xjlrrw { background-position:0 -280px;}
+.desktop_popmenu ul li a.popmenu_tjbdcx { background-position:0 -194px;}
+.desktop_popmenu ul li:hover a.popmenu_tjbdcx { background-position:0 -515px;}
+.desktop_popmenu ul li a.popmenu_scdqzm { background-position:0 -275px;}
+.desktop_popmenu ul li:hover a.popmenu_scdqzm { background-position:0 -596px;}
+.desktop_popmenu ul li a.popmenu_tjfuyy { background-position:0 -114px;}
+.desktop_popmenu ul li:hover a.popmenu_tjfuyy { background-position:0 -435px;}
+.desktop_popmenu ul li a.popmenu_open { background-position:0 -407px;}
+.desktop_popmenu ul li:hover a.popmenu_open { background-position:0 -433px;}
+.desktop_popmenu ul li a.popmenu_rename { background-position:0 -459px;}
+.desktop_popmenu ul li:hover a.popmenu_rename { background-position:0 -485px;}
+.desktop_popmenu ul li a.popmenu_edit { background-position:0 6px;}
+.desktop_popmenu ul li:hover a.popmenu_edit { background-position:0 -314px;}
+.desktop_popmenu ul li a.popmenu_del { background-position:0 -564px;}
+.desktop_popmenu ul li:hover a.popmenu_del { background-position:0 -590px;}
+.desktop_popmenu ul li .popmenu_list_sec { width:160px;}
+.desktop_popmenu ul li .popmenu_list_sec li img { width:30px; height:30px; }
+
+.desktop_window .window_left { width:225px; }
+.desktop_window .window_right { margin-left:225px; }
+.desktop_window .widnow_search_bg { height:30px; line-height:30px; }
+.desktop_window .widnow_search .search_icon { width:30px; height:30px; background:url(../images/desktop_window_search_big.png) no-repeat 0 7px;}
+.desktop_window .widnow_search .input { width:110px; height:31px; line-height:31px; font-size:15px; }
+
+.desktop_window .widnow_menu_list li h5 a { background:url(../images/desktop_menu_icon1_big.png) 0 6px no-repeat; font-size:15px; padding-left:16px;}
+.desktop_window .widnow_menu_list li h5 span { background:url(../images/desktop_menu_btn_big.png) 0 -53px no-repeat; width:14px; height:10px; margin:5px 20px 0 0;}
+.desktop_window .widnow_menu_list li.active_btn h5 span { background:url(../images/desktop_menu_btn_big.png) 0 -16px no-repeat; }
+.desktop_window .widnow_menu_list li.active h5 span { background:url(../images/desktop_menu_btn_big.png) 0 2px no-repeat; }
+.desktop_window .widnow_menu_list li ul li a { font-size:15px;}
+
+.desktop_window .window_tab_menu li { padding:18px 20px 7px 20px;}
+.desktop_window .window_tab_menu li a { font-size:15px; }
+
+.desktop_window .window_con_view { padding:0 2px; }
+.desktop_window .window_con_view a { width:32px; height:30px;}
+.desktop_window .window_con_view span { width:68px; height:30px; }
+.desktop_window .window_con_view .view1 { background:url(../images/desktop_con_view_big.png) 0 -40px no-repeat; }
+.desktop_window .window_con_view .view2 { background:url(../images/desktop_con_view_big.png) 0 0 no-repeat; }
+
+.desktop_window .window_input { height:30px; line-height:30px; font-size:15px;}
+.desktop_window .window_blue,.desktop_window .window_gray,.desktop_window .window_green { height:27px; line-height:27px; font-size:15px; width:87px; }
+
+/************ 应用中心 ************/
+.desktop_window .window_con_list li .add { width:63px; height:27px; background:url(../images/desktop_con_add_big.png) 0 0 no-repeat; text-align:center; line-height:24px; font-size:15px; }
+.desktop_window .window_con_list li .add:hover { background:url(../images/desktop_con_add_big.png) 0 -37px no-repeat; }
+.desktop_window .window_view_card .window_con_list li { width:75px; height:135px; }
+.desktop_window .window_view_card .window_con_list li h5 { font-size:15px; }
+.desktop_window .window_view_card .window_con_list li img { width:60px; height:60px; }
+.desktop_window .window_view_list .window_con_list li { width:280px;}
+.desktop_window .window_view_list .window_con_list li img { width:30px; height:30px; }
+.desktop_window .window_view_list .window_con_list li h5 { width:163px; font-size:15px;}
+.desktop_window .window_view_card .window_con_list .widget { width:227px; height:198px; }
+.desktop_window .window_view_card .window_con_list .widget img { width:227px; height:142px; }
+.desktop_window .window_view_card .window_con_list .widget .add { left:87px; }
+
+/************ 复合应用 ************/
+.desktop_window .window_apply_form { font-size:15px; }
+.desktop_window .window_apply_form dt { margin:5px 10px 0 0; width:87px;}
+.desktop_window .window_apply_form dd { width:700px;}
+.desktop_window .window_apply_form .window_apply_list { height:250px; width:700px; max-height:375px;}
+.desktop_window .window_apply_form .window_apply_list li img { height:40px; width:40px;}
+.desktop_window .window_apply_form .window_apply_list li .sign { width:27px; height:27px; background:url(../images/desktop_con_sign_big.png) 0 0 no-repeat; top:27px; left:29px;}
+
+.desktop_window .config_shade_con{ padding-top:27px; }
+.desktop_window .config_shade_con dt { width:111px; height:111px; float:left; overflow:hidden; margin:0 44px 0 32px;}
+.desktop_window .config_shade_con dt img { width:111px; height:111px;}
+.desktop_window .config_shade_con dd h3{ font-size:16px; line-height:35px;}

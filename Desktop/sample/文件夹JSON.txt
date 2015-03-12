@@ -1,0 +1,71 @@
+{
+    "canResized": true,
+    "canModify": false,
+    "titleDrag": true,
+    "Name": "新建文件夹",
+    "AppID": "应用ID",
+    "Index": 0,
+    "param": [
+        {
+            "background": "green",
+            "canResized": false,
+            "canModify": false,
+            "titleDrag": false,
+            "Name": "抄表段维护-注销",
+            "AppID": "YX-F01-10",
+            "IconPath": "http: //portal4.aostar.sgcc.com.cn//resources/upload/8a6e50704841fae8014843d53dad002c.png",
+            "AppIconPath": "http: //portal4.aostar.sgcc.com.cn//resources/upload/8a6e50704841fae8014843e59de2005b.png",
+            "Index": 0,
+            "AppCommand": "Aostar.MVP.WebBrowser.exe",
+            "param": "http: //10.238.208.231: 8001/sgpms/sectApplyManageFGrid/outSect.so?sortTypeCde=03&maintRemark=注销抄表段<<>>http: //yx.ph.sgcc.com.cn",
+            "AppType": 0,
+            "OpenType": 0,
+            "SystemID": "yx_ph001",
+            "id": "M1412733870456"
+        },
+        {
+            "background": "green",
+            "canResized": false,
+            "canModify": false,
+            "titleDrag": false,
+            "Name": "抄表机维护",
+            "AppID": "YX-F01-19",
+            "IconPath": "http: //portal4.aostar.sgcc.com.cn//resources/upload/8a6e50704841fae8014843d53dad002c.png",
+            "AppIconPath": "http: //portal4.aostar.sgcc.com.cn//resources/upload/8a6e50704841fae8014843ef3be5006c.png",
+            "Index": 0,
+            "AppCommand": "Aostar.MVP.WebBrowser.exe",
+            "param": "http: //10.238.208.231: 8001/sgpms/operateMachineForm/initPageMachineInfo.so<<>>http: //yx.ph.sgcc.com.cn",
+            "AppType": 0,
+            "OpenType": 0,
+            "SystemID": "yx_ph001",
+            "id": "M1412733871419"
+        },
+        {
+            "background": "green",
+            "canResized": false,
+            "canModify": false,
+            "titleDrag": false,
+            "Name": "业务费用查询",
+            "AppID": "YX-F03-32",
+            "IconPath": "http: //portal4.aostar.sgcc.com.cn//resources/upload/ff8080814875d7f2014876ab33da01ea.png",
+            "AppIconPath": "http: //portal4.aostar.sgcc.com.cn//resources/upload/8a6e50704841fae801484442651e0220.png",
+            "Index": 0,
+            "AppCommand": "Aostar.MVP.WebBrowser.exe",
+            "param": "http: //10.238.208.231: 8001/sgpms/changeAddressbusiAppTab/show.so?busiType=208<<>>http: //yx.ph.sgcc.com.cn",
+            "AppType": 0,
+            "OpenType": 0,
+            "SystemID": "yx_ph001",
+            "id": "M1413330425278"
+        }
+    ],
+    "AppTypeEnum": 32,
+    "AppType": 0,
+    "OpenType": 0,
+    "id": "M1413253530170",
+    "position": {
+        "width": 3,
+        "height": 7,
+        "top": 1,
+        "left": 34
+    }
+}

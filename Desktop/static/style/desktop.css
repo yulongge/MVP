@@ -1,0 +1,693 @@
+body,html { width:100%; height:100%; overflow:hidden; margin:0; padding:0;}
+body { position:relative; font-size:12px; color:#010101; font:12px Arial,'宋体'; overflow:hidden;}
+a,a:focus { outline:0; text-decoration:none; color:#000;}
+.font_red { color:#DD392C;}
+
+.desktop_mask { z-index:2; bottom:0; left:0; position:absolute; right:0; top:0; background-color:rgba(0, 0, 0, 0); height:100%;}
+.desktop_bg { z-index:1; bottom:0; left:0; position:absolute; right:0; top:0;}
+.desktop_image { background-image:url(../images/desktop_bg_12.jpg);}
+.desktop_fill { background-repeat:no-repeat; background-size:cover; background-position:center; }
+.desktop_adapt { background-repeat:no-repeat; background-size:contain; background-position:center top;}
+.desktop_stretch { background-repeat:no-repeat; background-size:cover; background-position:left top;}
+.desktop_tile { background-repeat:repeat; background-size:auto; background-position:left top; }
+.desktop_center { background-repeat:no-repeat; background-size:auto; background-position:center; }
+
+.desktop_mask_layer { z-index:1000; bottom:0; left:0; position:absolute; right:0; top:0; background-color:rgba(0, 0, 0, 0.8); height:100%; display:none;}
+
+/** 桌面背景 **/
+.desktop_bg_all { background:url(../images/desktop_bg_all.jpg) no-repeat scroll 50% 50% rgba(0, 0, 0, 0); }
+.desktop_bg_blues { background:url(../images/desktop_bg_01.jpg) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);}
+.desktop_bg_orange { background:url(../images/desktop_bg_02.jpg) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);}
+.desktop_bg_red { background:url(../images/desktop_bg_03.jpg) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);}
+.desktop_bg_green { background:url(../images/desktop_bg_04.jpg) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);}
+.desktop_bg_darkgreen { background:url(../images/desktop_bg_05.jpg) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);}
+.desktop_bg_purple { background:url(../images/desktop_bg_06.jpg) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);}
+.desktop_bg_darkred { background:url(../images/desktop_bg_07.jpg) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);}
+.desktop_bg_darkblue { background:url(../images/desktop_bg_08.jpg) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);}
+.desktop_bg_yellow { background:url(../images/desktop_bg_09.jpg) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);}
+.desktop_bg_darkgrey { background:url(../images/desktop_bg_10.jpg) no-repeat scroll 50% 50% rgba(0, 0, 0, 0);}
+
+.desktop_main { z-index:3; bottom:0; left:0; position:absolute; right:0; top:0; }
+
+/** 桌面左右切换 **/
+.desktop_slide { position:fixed; width:32px; display:block; height:100%; background-repeat:no-repeat; background-position:0 50%; cursor:pointer; z-index: 9999;}
+.desktop_slide:hover { background-color:rgba(0, 0, 0, 0.1); }
+.desktop_slide_left { left:0; background-image:url(../images/desktop_slide_icon01.png);}
+.desktop_slide_left:hover { background-image:url(../images/desktop_slide_icon03.png);}
+.desktop_slide_right { right:0; background-image:url(../images/desktop_slide_icon02.png);}
+.desktop_slide_right:hover { background-image:url(../images/desktop_slide_icon04.png);}
+
+/** 桌面、工作台 **/
+.desktop_header { z-index:100; position:absolute; top:0; left:0; background:url(../images/desktop_header.png) repeat-x 0 0; display:block; width:100%; height:31px;}
+.desktop_header .desktop_person { position:absolute; left:0;}
+.desktop_header .desktop_person_icon { position:relative; display:block; width:30px; height:30px; cursor:pointer;}
+.desktop_header .desktop_person_icon img { width:30px; height:30px;}
+.desktop_header .desktop_person_layer { position:absolute; margin-top:1px; display:none; width:178px; display:block; z-index:9;}
+.desktop_header .desktop_person_layer .layer_top { height:10px; background:url(../images/desktop_layer_top.png) no-repeat 0 0;}
+.desktop_header .desktop_person_layer .layer_middle { background:url(../images/desktop_layer_middle.png) repeat-y 0 0; overflow:hidden;}
+.desktop_header .desktop_person_layer .layer_bottom { height:15px; background:url(../images/desktop_layer_bottom.png) no-repeat 0 100%;}
+.desktop_header .desktop_person_list { width:170px; border-bottom:1px solid #e5e5e5; padding-bottom:10px;}
+.desktop_header .desktop_person_list li { clear:both; overflow:hidden; padding:5px 10px 0 10px; cursor:pointer;}
+.desktop_header .desktop_person_list li:hover { background:#e9f1fe;}
+.desktop_header .desktop_person_list .person_pic { float:left; display:block; position:relative;}
+.desktop_header .desktop_person_list .person_pic img { position:relative; width:30px; height:30px;}
+.desktop_header .desktop_person_list .person_pic .person_sign { position:absolute; left:12px; top:15px; background:url(../images/desktop_person_sign.png) no-repeat 0 0; width:21px; height:17px;}
+.desktop_header .desktop_person_list .person_con { position:relative; float:left; display:block; margin-left:10px; width:110px;}
+.desktop_header .desktop_person_list .person_con p { line-height:15px; font-size:12px; font-family:"微软雅黑"; }
+.desktop_header .desktop_person_list .person_con .person_con_name1 { color:#000;}
+.desktop_header .desktop_person_list .person_con .person_con_name2 { font-size:10px; color:#a3a3a3;}
+.desktop_header .desktop_person_list .person_con .person_con_edit { position:absolute; left:75px; top:8px;background: url("../images/edit.png") no-repeat; width: 14px; height:14px; display:inline-block; *display:inline; zoom:1;}
+.desktop_header .desktop_person_list .person_con .person_con_del { position:absolute; left:95px; top:8px;  background: url("../images/del.png") no-repeat;height: 14px; width: 14px; display:inline-block; *display:inline; zoom:1;}
+.desktop_header .desktop_person_other { width:170px; line-height:40px; text-align:center; border-bottom:1px solid #E5E5E5; }
+.desktop_header .desktop_person_logout { width:170px; line-height:40px; height:33px; text-align:center; }
+.desktop_header .desktop_person_other a:hover{ color:#3374B6;}
+.desktop_header .desktop_system { display:block; width:150px; margin:0 auto; height:30px; font-family:"微软雅黑"; }
+.desktop_header .desktop_system a { padding:0 10px;}
+.desktop_header .desktop_system a,.desktop_system span { float:left; display:block; height:30px; line-height:26px;}
+.desktop_header .desktop_system span { background:url(../images/desktop_system.png) no-repeat; padding-left:25px;}
+.desktop_header .desktop_system .system_computer { background-position:0 3px;}
+.desktop_header .desktop_system .system_apply { background-position:0 -27px;}
+.desktop_header .desktop_system a.active { background:#2979f9; color:#fff;}
+.desktop_header .desktop_system a.active .system_computer { background-position:0 -57px;}
+.desktop_header .desktop_system a.active .system_apply { background-position:0 -87px;}
+.desktop_header .desktop_shortcut { position:absolute; right:10px; top:0; font-family:"微软雅黑"; }
+.desktop_header .desktop_shortcut a { padding:4px 5px 0 5px; height:26px; line-height:21px; margin:0 1px 0 0;}
+.desktop_header .desktop_shortcut a,.desktop_shortcut span {display:inline-block; *display:inline; zoom:1; height:26px;}
+.desktop_header .desktop_shortcut span { background:url(../images/desktop_shortcut.png) no-repeat; padding-left:23px;}
+.desktop_header .desktop_shortcut a:hover,.desktop_header .desktop_shortcut a.active { background:#2979f9;}
+.desktop_header .desktop_shortcut a:hover span,.desktop_header .desktop_shortcut a.active span { color:#fff;}
+.desktop_header .desktop_shortcut .shortcut_search { background-position:0 2px;}
+.desktop_header .desktop_shortcut a:hover .shortcut_search,.desktop_header .desktop_shortcut a.active .shortcut_search { background-position:0 -208px;}
+.desktop_header .desktop_shortcut .desktop_person_layer{ position:absolute; left:0; top:30px; display:none;}
+.desktop_header .desktop_person_layer a:hover{ background:none;}
+.desktop_header .desktop_shortcut .shortcut_clock { background-position:0 -30px;}
+.desktop_header .desktop_shortcut a:hover .shortcut_clock,.desktop_header .desktop_shortcut a.active .shortcut_clock { background-position:0 -240px;}
+.desktop_header .desktop_shortcut .shortcut_news { background-position:0 -60px;}
+.desktop_header .desktop_shortcut a:hover .shortcut_news,.desktop_header .desktop_shortcut a.active .shortcut_news { background-position:0 -270px;}
+.desktop_header .desktop_shortcut .shortcut_message { background-position:0 -90px;}
+.desktop_header .desktop_shortcut a:hover .shortcut_message,.desktop_header .desktop_shortcut a.active .shortcut_message { background-position:0 -300px;}
+.desktop_header .desktop_shortcut .shortcut_im { background-position:0 -120px;}
+.desktop_header .desktop_shortcut a:hover .shortcut_im,.desktop_header .desktop_shortcut a.active .shortcut_im { background-position:0 -330px;}
+.desktop_header .desktop_shortcut .shortcut_set { background-position:0 -150px;}
+.desktop_header .desktop_shortcut a:hover .shortcut_set,.desktop_header .desktop_shortcut a.active .shortcut_set { background-position:0 -360px;}
+.desktop_header .desktop_shortcut .shortcut_minimize { background-position:0 -180px;}
+.desktop_header .desktop_shortcut a:hover .shortcut_minimize,.desktop_header .desktop_shortcut a.active .shortcut_minimize { background-position:0 -390px;}
+.desktop_header .desktop_shortcut .shortcut_maximize { background-position:0 -420px;}
+.desktop_header .desktop_shortcut a:hover .shortcut_maximize,.desktop_header .desktop_shortcut a.active .shortcut_maximize { background-position:0 -450px;}
+
+.desktop_header .desktop_shortcut .shortcut_skim { background-position:0 -489px;}
+.desktop_header .desktop_shortcut a:hover .shortcut_skim,.desktop_header .desktop_shortcut a.active .shortcut_skim { background-position:0 -525px;}
+
+.desktop_button { position:absolute; left:25px; bottom:10px; z-index:101; }
+.desktop_button a { display:block; padding:0 4px;}
+.desktop_button a,.desktop_button span { float:left; display:block; width:43px; height:43px;}
+.desktop_button span { background:url(../images/desktop_button.png) no-repeat;}
+.desktop_button .button_add { background-position:0 0;}
+.desktop_button a:hover .button_add { background-position:-53px 0;}
+.desktop_button .button_del { background-position:0 -53px;}
+.desktop_button a:hover .button_del { background-position:-53px -53px;}
+.desktop_button a .button_del_hover { background-position:-53px -53px;}
+
+.desktop_bullets { position:absolute; bottom:10px; z-index:99;width:100%;text-align:center }
+.desktop_bullets a { padding:0 3px;}
+.desktop_bullets a,.desktop_bullets span { display:inline-block; width:28px; height:28px;}
+.desktop_bullets span { background:url(../images/desktop_bullets.png) no-repeat 0 -38px;}
+
+.desktop_bullets .bullets_add { background-position:0 0;}
+.desktop_bullets a:hover .bullets_add { background-position:-38px 0;}
+.desktop_bullets a.p_active span {background-position:-38px -38px;}
+.desktop_bullets a.p_droppable span {background-position:-38px -38px;}
+
+.desktop_layer { position:absolute; z-index:4;}
+.desktop_layer .layer_control { position:absolute; display:block; }
+.desktop_layer .layer_del { position:absolute; top:-8px; right:-8px;}
+.desktop_layer .layer_del a { display:block; width:28px; height:28px; background:url(../images/desktop_icon_close.png) no-repeat;}
+.desktop_layer .layer_del a:hover {background:url(../images/desktop_icon_closehover.png) no-repeat;}
+
+/**桌面列容器**/
+.desktop_layer .desktop_layer_row { position:absolute;}
+.desktop_layer .desktop_layer_row .layer_column { display:block; margin:8px 0; overflow:hidden;}
+
+.desktop_layer .sortable_placeholder{background:rgba(255,255,255,0.1);margin-top:8px;}
+.desktop_main .desktop_layer .layer_button .layer_column {position: relative; display:block; width:60px; padding:5px 5px 2px; border-radius:5px; border:1px solid; border-color:rgba(255,255,255,0); height:83px; overflow:hidden;text-align:center; }
+.desktop_main .desktop_layer .layer_button .layer_column .layer_column_input{ width:50px; height:20px; border:1px solid #ccc; margin:5px auto; line-height:20px;}
+.desktop_main .desktop_layer .layer_button .layer_column p{ text-align:center;position: relative;/*top:-2px;*/}
+.desktop_main .desktop_layer .layer_button .layer_column p img { width:48px; height:48px; }
+.desktop_main .desktop_layer .layer_button .layer_column h4 { font-family:"微软雅黑"; font-size:12px; color:#eceef1; text-shadow:1px 1px 1px #000;position: relative;top:-2px;word-break: break-all; }
+.desktop_main .desktop_layer .layer_button .layer_column:hover { border-color:rgba(255,255,255,0.4); background:rgba(255,255,255,0.1);}
+.desktop_layer .layer_part .layer_column { display:block; /* padding:4px;border-radius:5px; border:4px solid; border-color:rgba(255,255,255,0);*/min-width:250px; min-height:270px;  }
+.desktop_layer .layer_part .assembly_box { background:#fff; border-radius:5px; box-shadow:0 0 5px; height:100%; min-width:250px; min-height:270px; overflow:hidden; }
+.desktop_layer .layer_part .assembly_box1 { border-radius:5px; box-shadow:0 0 5px; height:100%; min-width:250px; min-height:270px; background:#fff;  }
+.desktop_layer .layer_part .assembly_box .title{ -webkit-border-top-left-radius:5px;-webkit-border-top-right-radius:5px; cursor:move;}
+.desktop_layer .layer_part .layer_column:hover { border-color:rgba(255,255,255,0.4); background:rgba(255,255,255,0.1);}
+/*组件*/
+.gtasks_box_01 {background: none repeat scroll 0 0 #FFFFFF; min-width: 250px;overflow: hidden;}
+.gtasks_box_01 .title {background: none repeat scroll 0 0 #F5F5F5;border-bottom: 1px solid #A5A5A5;cursor: move;height: 35px; position: relative;text-align: center;}
+.gtasks_box_01 .title span {color: #000000;display: block;font-family: "微软雅黑";font-size: 14px;height: 35px;line-height: 35px;width: 100%;}
+.gtasks_box_01 .list {height: 235px;overflow: auto;}
+.gtasks_box_01 .list ul {list-style: none outside none;margin: 0;padding: 0;}
+.gtasks_box_01 .list ul li {background: url("../images/icon01.jpg") no-repeat scroll 8px 10px rgba(0, 0, 0, 0);border-bottom: 1px solid #EBEBEB;cursor: pointer;padding: 5px 5px 5px 24px;text-align: left;}
+.gtasks_box_01 .list ul li a {color: #000000; display: inline-block;font-family: "微软雅黑";font-size: 12px;text-decoration: none;}
+.gtasks_box_01 .list ul li:hover { background: url("../images/icon01.jpg") no-repeat scroll 8px 10px #D3E6EB;}
+.gtasks_box_01 .list ul li:hover a { color: #3374B6;}
+.gtasks_box_01 .list ul li .name {color: #666666;font-family: "微软雅黑";font-size: 12px;}
+.gtasks_box_01 .list ul li .name_span {margin-right: 15px;}
+.gtasks_box_01 .list ul li .move {color: #017AFD; cursor: pointer;display: block;font-family: "微软雅黑";font-size: 12px;text-align: center;}
+.gtasks_box_01 .title .renovate {background: url("../images/icon02.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);display: block;height: 14px;left: 15px;position: absolute;top: 10px;width: 14px;}
+.gtasks_box_01 .title .renovate:hover {background: url("../images/icon03.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);}
+.gtasks_box_01 .title .renovate:active {background: url("../images/icon02.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);}
+.gtasks_box_01 .title .move {background: url("../images/icon_move_hover.png") no-repeat scroll center center rgba(0, 0, 0, 0);display: block;height: 4px;left: 37px;padding: 15px 0;position: absolute;top: 0;width: 16px;}
+.gtasks_box_01 .title .move:hover { background: url("../images/icon_move_active.png") no-repeat scroll center center rgba(0, 0, 0, 0);}
+.desktop_layer .desktop_layer_row .layer_button{position: relative;}
+
+.desktop_main .desktop_layer .foldermin_candrop .layer_column{border-color:rgba(255,255,255,0.4); background:rgba(255,255,255,0.1);}
+
+.desktop_main .layer_button .layer_column { display:block; width:60px; padding:5px 5px 2px; border-radius:5px; border:1px solid; border-color:rgba(255,255,255,0); height:83px; overflow:hidden;text-align:center; }
+.desktop_main .layer_button .layer_column .layer_column_input{ width:50px; height:20px; border:1px solid #ccc; margin:5px auto; line-height:20px;}
+.desktop_main .layer_button .layer_column p{ text-align:center;position: relative;/*top:-2px;*/}
+.desktop_main .layer_button .layer_column p img { width:48px; height:48px; }
+.desktop_main .layer_button .layer_column h4 { font-family:"微软雅黑"; font-size:12px; color:#eceef1; text-shadow:1px 1px 1px #000;position: relative;top:-2px;word-break: break-all; }
+.desktop_main .layer_button .layer_column:hover { border-color:rgba(255,255,255,0.4); background:rgba(255,255,255,0.1);}
+/** 右键菜单 **/
+.desktop_popmenu { position:absolute; z-index:5; display:none;}
+.desktop_popmenu ul { background:rgba(242,242,242,1.0); border:1px solid #d9d9d9; position:absolute; width:167px;  border-radius:5px; box-shadow:0 0 5px;}
+.desktop_popmenu ul li { margin:2px 0; height:28px; line-height:28px; }
+.desktop_popmenu ul li:hover { background:rgba(41,121,249,0.85); }
+.desktop_popmenu ul li a { font-family:"微软雅黑"; font-size:12px; color:#242424; display:block; height:28px; line-height:28px; overflow:hidden; text-decoration:none; margin-left:15px; background:url(../images/desktop_popmenu.png) no-repeat; padding-left:25px;}
+.desktop_popmenu ul li:hover a { color:#fff;}
+.desktop_popmenu ul li a.popmenu_zlzm { background-position:0 6px;}
+.desktop_popmenu ul li:hover a.popmenu_zlzm { background-position:0 -176px;} 
+.desktop_popmenu ul li a.popmenu_aywfz { background-position:0 -20px;}
+.desktop_popmenu ul li:hover a.popmenu_aywfz { background-position:0 -202px;}
+.desktop_popmenu ul li a.popmenu_ghpf { background-position:0 -45px;}
+.desktop_popmenu ul li:hover a.popmenu_ghpf { background-position:0 -228px;}
+.desktop_popmenu ul li a.popmenu_xjwjj { background-position:0 -71px;}
+.desktop_popmenu ul li:hover a.popmenu_xjwjj { background-position:0 -254px;}
+.desktop_popmenu ul li a.popmenu_xjlrrw { background-position:0 -98px;}
+.desktop_popmenu ul li:hover a.popmenu_xjlrrw { background-position:0 -280px;}
+.desktop_popmenu ul li a.popmenu_tjbdcx { background-position:0 -124px;}
+.desktop_popmenu ul li:hover a.popmenu_tjbdcx { background-position:0 -306px;}
+.desktop_popmenu ul li a.popmenu_scdqzm { background-position:0 -150px;}
+.desktop_popmenu ul li:hover a.popmenu_scdqzm { background-position:0 -332px;}
+.desktop_popmenu ul li a.popmenu_tjfuyy { background-position:0 -358px;}
+.desktop_popmenu ul li:hover a.popmenu_tjfuyy { background-position:0 -383px;}
+.desktop_popmenu ul li a.popmenu_open { background-position:0 -407px;}
+.desktop_popmenu ul li:hover a.popmenu_open { background-position:0 -433px;}
+.desktop_popmenu ul li a.popmenu_rename { background-position:0 -459px;}
+.desktop_popmenu ul li:hover a.popmenu_rename { background-position:0 -485px;}
+.desktop_popmenu ul li a.popmenu_edit { background-position:0 -511px;}
+.desktop_popmenu ul li:hover a.popmenu_edit { background-position:0 -537px;}
+.desktop_popmenu ul li a.popmenu_del { background-position:0 -564px;}
+.desktop_popmenu ul li:hover a.popmenu_del { background-position:0 -590px;}
+.desktop_popmenu ul li a.popmenu_transform { background:url(../images/transform.png) no-repeat;background-position:0 7px;}
+.desktop_popmenu ul li:hover a.popmenu_transform { background:url(../images/transform_hover.png) no-repeat;background-position:0 7px;}
+.desktop_popmenu ul li a.popmenu_lock { background:url(../images/menu_lock.png) no-repeat scroll 0  6px rgba(0, 0, 0, 0);}
+.desktop_popmenu ul li a.popmenu_lock:hover { background:url(../images/menu_lock.png) no-repeat scroll 0 -31px rgba(0, 0, 0, 0);}
+
+.apply_popmenu ul { width:110px; }
+.application_popmenu ul { width:110px; }
+
+.desktop_popmenu ul li h3 { position:relative;}
+.desktop_popmenu ul li h3 span { position:absolute; right:10px; top:0; margin:10px 10px 0 0; cursor:pointer; display:block; background:url(../images/desktop_arrow.png) no-repeat 0 0; width:7px; height:10px;}
+.desktop_popmenu ul li:hover h3 span { background:url(../images/desktop_arrow.png) no-repeat 0 -20px; }
+.desktop_popmenu ul li .popmenu_list_first {position:relative;}
+.desktop_popmenu ul li .popmenu_list_first img { width:16px; height:14px; vertical-align:middle; margin:-1px 10px 0 0;}
+.desktop_popmenu ul li .popmenu_list_sec { position:absolute; left:195px; top:0; display:none; width:130px;}
+.desktop_popmenu ul li .popmenu_list_sec li a { float:left; background:none; color:#242424; padding:0;}
+.desktop_popmenu ul li .popmenu_list_sec li:hover a { color:#fff;}
+.desktop_popmenu ul li .popmenu_list_sec li img { width:24px; height:24px; vertical-align:middle; margin-right:10px;}
+.desktop_popmenu ul li .popmenu_list_sec .popmenu_list_skin { border-top:1px solid #757474; padding-top:3px; } 
+.desktop_popmenu ul li .popmenu_list_sec .popmenu_list_skin a { background:url(../images/desktop_popmenu_skin.png) no-repeat 0 2px; padding-left:33px; }
+
+.ui-menu .ui-menu-item {list-style-image:none !important;}
+
+/*==滚动条样式==*/
+::-webkit-scrollbar {  
+ width: 20px;  
+ height: 20px;  
+} 
+::-webkit-scrollbar-track,  
+::-webkit-scrollbar-thumb {  
+  border-radius: 999px;  
+  border: 5px solid transparent;  
+}  
+::-webkit-scrollbar-track {  
+
+} 
+::-webkit-scrollbar-thumb {  
+  min-height: 20px;  
+  background-clip: content-box;  
+  box-shadow: 0 0 0 5px rgba(0,0,0,.1) inset;  
+}  
+  
+::-webkit-scrollbar-corner {  
+  background: transparent;  
+}  
+
+/** 弹出窗口 **/
+.desktop_store { position:absolute;}
+.desktop_windowMsg { position:absolute;display: none;}
+.desktop_window { display:block; width:870px; position:fixed; z-index:1050; border-radius:6px; box-shadow:0 3px 7px rgba(0, 0, 0, 0.3); outline:medium none; background-color:rgba(255, 255, 255, 1);}
+.desktop_window .window_header { position:relative; display:block; text-align:center; margin:0 auto; height:35px; line-height:30px; border-bottom:1px solid #C1C1C1; background: url(../images/desktop_window_bg.png) repeat-x; border-radius:7px 7px 0 0;}
+.desktop_window .window_header_menu { position:absolute; left:10px; top:3px;}
+.desktop_window .window_header_menu a { display:inline-block; height:21px; margin:0 5px; vertical-align:middle;}
+.desktop_window .window_header_menu .menu1 { background:url(../images/desktop_header_menu1.png) no-repeat 0 center; width:18px; }
+.desktop_window .window_header_menu .menu2 { background:url(../images/desktop_header_menu2.png) no-repeat 0 center; width:18px;}
+.desktop_window .window_header_menu .menu3 { background:url(../images/desktop_header_menu3.png) no-repeat 0 0; width:23px;}
+.desktop_window .window_header_title{ margin:0 auto; font-size:14px; line-height:35px;}
+.desktop_window .window_header_oper { position:absolute; right:10px; top:3px;}
+.desktop_window .window_header_oper a { display:inline-block; height:12px; margin:0 5px; vertical-align:middle;}
+.desktop_window .window_header_oper .oper1 { background:url(../images/desktop_header_oper1.png) no-repeat 0 0; width:10px; }
+.desktop_window .window_header_oper .oper1:hover { background:url(../images/desktop_header_oper1.png) no-repeat 0 -20px; }
+.desktop_window .window_header_oper .oper1:active { background:url(../images/desktop_header_oper1.png) no-repeat 0 -40px; }
+.desktop_window .window_header_oper .oper2 { background:url(../images/desktop_header_oper2.png) no-repeat 0 0; width:12px; }
+.desktop_window .window_header_oper .oper2:hover { background:url(../images/desktop_header_oper2.png) no-repeat 0 -20px; }
+.desktop_window .window_header_oper .oper2:active { background:url(../images/desktop_header_oper2.png) no-repeat 0 -40px; }
+.desktop_window .window_header_oper .oper2_restore { background:url(../images/desktop_header_oper2_restore.png) no-repeat 0 0; width:12px; }
+.desktop_window .window_header_oper .oper2_restore:hover { background:url(../images/desktop_header_oper2_restore.png) no-repeat 0 -20px; }
+.desktop_window .window_header_oper .oper2_restore:active { background:url(../images/desktop_header_oper2_restore.png) no-repeat 0 -40px; }
+.desktop_window .window_header_oper .oper3 { background:url(../images/desktop_header_oper3.png) no-repeat 0 0; width:12px; }
+.desktop_window .window_header_oper .oper3:hover { background:url(../images/desktop_header_oper3.png) no-repeat 0 -20px; }
+.desktop_window .window_header_oper .oper3:active { background:url(../images/desktop_header_oper3.png) no-repeat 0 -40px; }
+.desktop_window .window_content { clear:both; overflow:hidden;}
+.desktop_window .window_left { float:left; width:180px; display:block; border-radius:0 0 0 5px; }
+.desktop_window .window_right { margin-left:180px; background:#fff; border-left:1px solid #B8B8B8; border-radius:0 0 5px 0; background:#fff; height:100%;}
+.desktop_window .widnow_search { background:url(../images/desktop_menu_line.png) 0 100% repeat-x; padding:10px; }
+.desktop_window .widnow_search_bg { height:25px; line-height:25px; border:1px solid #ccc; border-radius:14px; background:#fff;}
+.desktop_window .widnow_search a { display:block; float:right;}
+.desktop_window .widnow_search .search_icon { width:25px; height:25px; background:url(../images/desktop_window_search.png) no-repeat 0 7px;}
+.desktop_window .widnow_search .input { outline:none;float:left; border:0; vertical-align:middle; width:110px; height:25px; line-height:25px; font-family:"微软雅黑"; font-size:12px; background:transparent; color:#7b7b7b; padding:0 10px;}
+.desktop_window .widnow_search .search_del { width:11px; height:11px; margin:8px 6px 0 0; background:url(../images/desktop_search_del.png) no-repeat 0 0; }
+.desktop_window .widnow_search .search_del:hover{ background:url(../images/desktop_search_del.png) no-repeat 0 -20px;}
+.desktop_window .widnow_search .search_del:active{ background:url(../images/desktop_search_del.png) no-repeat 0 -40px;}
+.desktop_window .window_menu_title { font-size:12px; color:#000; background:url(../images/desktop_menu_line.png) 0 100% repeat-x; padding:10px 0 10px 30px;}
+.desktop_window .widnow_menu_list li h5 { clear:both; overflow:hidden; padding:10px 0 10px 17px; background:url(../images/desktop_menu_line.png) 0 100% repeat-x; cursor:pointer;}
+.desktop_window .widnow_menu_list li h5 a { float:left; display:block; background:url(../images/desktop_menu_icon1.png) 0 6px no-repeat; padding-left:13px;}
+.desktop_window .widnow_menu_list li h5 span { float:right; display:block; background:url(../images/desktop_menu_btn.png) 0 -54px no-repeat; width:8px; height:8px; margin:5px 20px 0 0;}
+.desktop_window .widnow_menu_list li h5:hover { background:#abd9f6;}
+.desktop_window .widnow_menu_list li.active h5 { background:#2979f9;}
+.desktop_window .widnow_menu_list li.active h5 a { color:#fff;}
+/*.desktop_window .widnow_menu_list li:hover h5 a { background:url(../images/desktop_menu_icon2.png) 0 6px no-repeat; }
+.desktop_window .widnow_menu_list li.active h5 a { background:url(../images/desktop_menu_icon3.png) 0 6px no-repeat; }*/
+.desktop_window .widnow_menu_list li.active_btn h5 span { background:url(../images/desktop_menu_btn.png) 0 -19px no-repeat; }
+.desktop_window .widnow_menu_list li.active h5 span { background:url(../images/desktop_menu_btn.png) 0 0 no-repeat; }
+.desktop_window .widnow_menu_list li ul { background:url(../images/desktop_menu_line.png) 0 100% repeat-x; padding:8px 0;  display:none;}
+.desktop_window .widnow_menu_list li.active ul { display:block;}
+.desktop_window .widnow_menu_list li ul li { padding:5px 0 5px 17px; margin:1px 0;}
+.desktop_window .widnow_menu_list li ul li a { color:#333; padding-left:13px;}
+.desktop_window .widnow_menu_list li ul li:hover { background:#abd9f6;}
+.desktop_window .widnow_menu_list li ul li.active { background:#2979f9; }
+.desktop_window .widnow_menu_list li ul li.active a { color:#fff;}
+
+/** 应用中心 **/
+.desktop_window .window_tab { font-family:"微软雅黑"; padding-left:20px;}
+.desktop_window .window_tab_menu { position:relative; height:45px; background:url(../images/desktop_tab.png) 0 100% repeat-x; }
+.desktop_window .window_tab_menu li { float:left; display:block; padding:21px 20px 7px 20px;}
+.desktop_window .window_tab_menu li a { color:#555;}
+.desktop_window .window_tab_menu li a:hover { color:#2979f9;}
+.desktop_window .window_tab_menu li.active { background:url(../images/desktop_tab_hover.png) 0 100% repeat-x; }
+.desktop_window .window_tab_menu li.active a { color:#010101;}
+.desktop_window .window_con_item { display:block; height:40px; margin:10px 39px 0 0; overflow:hidden;}
+.desktop_window .window_con_item .window_con_result { float:left;}
+.desktop_window .window_con_item .window_con_oper { float:right;}
+.desktop_window .window_con_deploy { float:left;}
+.desktop_window .window_con_deploy a { display:block; width:67px; height:22px; line-height:22px; border:1px solid #e7e7e7; text-align:center; color:#333; border-radius:2px;}
+.desktop_window .window_con_deploy a.active { background:#4593eb; border:1px solid #4593eb; color:#fff; }
+.desktop_window .window_con_line { float:left; display:block; margin:-3px 15px 0 15px; color:#e7e7e7; font-size:18px; font-weight:100;}
+.desktop_window .window_con_view { float:left; overflow:hidden; padding:0 1px; }
+.desktop_window .window_con_view a { float:left; display:block; width:26px; height:24px;}
+.desktop_window .window_con_view span { background:url(../images/desktop_con_view.png) no-repeat; display:block; width:54px; height:24px; }
+.desktop_window .window_con_view .view1 { background:url(../images/desktop_con_view.png) 0 -30px no-repeat; }
+.desktop_window .window_con_view .view2 { background:url(../images/desktop_con_view.png) 0 0 no-repeat; }
+.desktop_window .window_con_height { overflow-y:auto;}
+.desktop_window .appstore_menu_list { overflow-y: auto; height: 365px;}
+
+.desktop_window .window_con_list { display:block; overflow:hidden; display:inline-table; margin-left:-10px;}
+.desktop_window .window_con_list li { display:block; padding:5px; border:2px solid; border-color:rgba(23,129,255,0); background:rgba(23,129,255,0); border-radius:5px; border:1px solid transparent; position:relative;}
+.desktop_window .window_con_list li h5 { font-family:"微软雅黑"; font-size:12px; color:#636362;}
+.desktop_window .window_con_list li h5 span { color:#ea0000;}
+.desktop_window .window_con_list li:hover { border-radius:5px; border:1px solid #90c2ff; background:rgba(36,125,238,0.12);}
+.desktop_window .window_con_list li .sign { position:absolute; display:block; width:22px; height:22px;background:url(../images/desktop_con_sign.png) 0 0 no-repeat; }
+.desktop_window .window_con_list li .add { display:block; width:51px; height:22px; background:url(../images/desktop_con_add.png) 0 0 no-repeat; text-align:center; line-height:20px; }
+.desktop_window .window_con_list li .add:hover { background:url(../images/desktop_con_add.png) 0 -30px no-repeat; color:#fff;}
+/** 修改 **/
+.desktop_window .window_view_list .window_con_list { float:left; }
+.desktop_window .window_view_list .window_con_list li { float:left; display:block; width:235px; margin:2px 10px; overflow:hidden; }
+.desktop_window .window_view_list .window_con_list li h5 { float:left; margin-left:8px; width:131px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.desktop_window .window_view_list .window_con_list li img { float:left; width:24px; height:24px; vertical-align:middle; margin-top:-2px; }
+.desktop_window .window_view_list .window_con_list li .sign { top:13px; left:16px; }
+.desktop_window .window_view_list .window_con_list li .add { float:right;}
+
+.desktop_window .window_view_card .window_con_list li { float:left; width:60px; height:110px; margin:2px 10px; text-align:center; }
+.desktop_window .window_view_card .window_con_list li h5 { margin-top:0;}
+.desktop_window .window_view_card .window_con_list li img { width:48px; height:48px; }
+.desktop_window .window_view_card .window_con_list li .sign { top:38px; right:2px; }
+.desktop_window .window_view_card .window_con_list li .add { position:absolute; left:9px; bottom:5px; }
+.desktop_window .window_con_list li .add1 { background:none; color:#888;}
+.desktop_window .window_con_list li .add1:hover { background:none; color:#888;}
+/*复合应用*/
+.desktop_window .window_view_card .window_con_list .widget { float:left; width:182px; height:165px; margin:2px 10px; text-align:center; }
+.desktop_window .window_view_card .window_con_list .widget h5 { margin-top:0;}
+.desktop_window .window_view_card .window_con_list .widget img { width:182px; height:114px; }
+.desktop_window .window_view_card .window_con_list .widget .sign { top:99px; right:3px; }
+.desktop_window .window_view_card .window_con_list .widget .add { position:absolute; left:70px; bottom:5px; }
+
+.desktop_window .window_con_item .window_con_result { margin-top:5px;}
+.desktop_window .window_con_item .window_con_result span { color:#ea0000;}
+.desktop_window .window_con_head { font-weight:bold; color:#888; margin-bottom:10px;}
+.desktop_window .window_module2 .window_con_list { margin-bottom:15px; }
+
+/** 消息中心 **/
+.desktop_window .window_results { color:#010101; display:block; padding:10px; height:20px; line-height:20px; border-bottom:1px solid #ddd;}
+.desktop_window .window_results_total { float:left; display:block;}
+.desktop_window .window_results_total span,.desktop_window .window_results_total a { margin:0 10px;}
+.desktop_window .window_results_total a { color:#1280FD;}
+.desktop_window .window_results_check { float:right; display:block; color:#000; margin-right:10px;} 
+.desktop_window .window_results_check input { margin:-2px 5px 0 0; vertical-align:middle; }
+
+.desktop_window .window_list { width:100%; display:table; }
+.desktop_window .window_list_box{ height:293px; overflow-x:hidden; overflow-y:auto;}
+.desktop_window .window_list li { margin:0 15px; overflow:hidden; }
+.desktop_window .window_list li a { float:left; display:block;}
+.desktop_window .window_list li span { float:right; display:block; color:#919191; }
+.desktop_window .window_list li.readed .title{ background:url(../images/icon_alr.png) no-repeat 10px 10px; }
+.desktop_window .window_list li.readed a { color:#888;}
+.desktop_window .window_list li.current .title{ background-color:#e3e8ed;}
+.desktop_window .window_list .title{ border-bottom:1px solid #dddddd; padding:0px 5px 0px 40px; height:30px; line-height:30px; background:url(../images/icon_not.png) no-repeat 10px 10px; }
+.desktop_window .window_list .window_show_con{ padding:5px 5px 5px 40px; background-color:#e3e3e3; clear:both; display:none;}
+.desktop_window .window_list .window_list_con{ line-height:25px;} 
+
+.desktop_window .window_page { display:table; margin:0 auto; margin-top:15px; padding-bottom:30px;}
+.desktop_window .window_page a,.window_right .window_page span { float:left; display:block; width:22px; height:22px; text-align:center; line-height:22px; border:1px solid #e8e8e8; border-radius:2px; margin:0 3px;}
+.desktop_window .window_page a.page_pre { background:#2979f9 url(../images/desktop_page.png) no-repeat 6px 5px; border:1px solid #2979f9; }
+.desktop_window .window_page a.page_next { background:#2979f9 url(../images/desktop_page.png) no-repeat 6px -15px; border:1px solid #2979f9; }
+.desktop_window .window_page a.page_current { border:1px solid #2979f9; color:#2979f9; }
+.desktop_window .window_page span.page_ellipsis { border:0;}
+
+/** 其他用户登录 **/
+.desktop_window .window_login_title { padding-left:20px; font-size:12px; font-family:"微软雅黑"; color:#000; margin:15px 0 0 0;}
+.desktop_window .window_login_list { clear:both; margin-left:20px; overflow:hidden;}
+.desktop_window .window_login_list li { float:left; display:block; width:32px; height:32px; margin:15px;}
+.desktop_window .window_login_form { clear:both; overflow:hidden; margin:20px 0 20px 20px;}
+.desktop_window .window_login_form dl { float:left; display:block; margin-right:30px;}
+.desktop_window .window_login_form dt,.desktop_window .window_login_form dd { float:left;}
+.desktop_window .window_login_form dt { margin:5px 10px 0 0;}
+.desktop_window .window_login_form input { vertical-align:middle;}
+.desktop_window .window_input { border:1px solid #ccc; height:24px; line-height:24px; padding:0 5px;}
+.desktop_window .window_input_error { border:1px solid red;}
+.desktop_window .text_error{color:red !important;}
+.desktop_window .window_btn_wrap { clear:both; border-top:1px solid #cdcdcd; width:100%; display:block; padding:15px 0; overflow:hidden;}
+.desktop_window .window_btn_wrap a { margin:0 5px;}
+.desktop_window .window_btn_wrap .bg { float:right; margin-right:10px;}
+.desktop_window .window_blue,.desktop_window .window_gray,.desktop_window .window_green{ float:right;display:inline-block; height:22px; line-height:22px; font-size:12px; width:70px; text-align:center; padding:0; margin-right:20px; border-radius:2px;}
+.desktop_window .window_blue { background:#2a79Fa; border:1px solid #2a79Fa; color:#fff;}
+.desktop_window .window_gray { border:1px solid #e5e4e3; color:#000; background:#fff;}
+.desktop_window .window_green { background:#2a79Fa;color:#fff;float:right;border:1px solid #2a79Fa;}
+
+/** 闹铃 **/
+.desktop_window .window_header_title1 { text-align:left; padding-left:20px;}
+.desktop_window .window_header_add{ position:absolute; right:10px; top:3px;}
+.desktop_window .window_header_add a{ width:16px; height:32px; display:inline-block; *display:inline;  background:url(../images/alarm_add.png) no-repeat left center;}
+
+.desktop_window .window_clock_top{height:225px; overflow:auto;}
+.desktop_window .window_clock_select{height:225px;}
+.desktop_window .window_clock_top p{ height:20px; line-height:20px; text-align:center; font-size:16px; font-family:"微软雅黑"; margin-top:100px;}
+.desktop_window .window_clock_top img{ vertical-align:middle; margin-right:5px;}
+.desktop_window .window_clock_see{ height:26px; padding-top:18px;}
+.desktop_window .window_clock_see .voice{ float:left; width:13px; height:26px; background:url(../images/voice.png) no-repeat 0 center; margin-left:10px; cursor:pointer;}
+.desktop_window .window_clock_see .textarea{ width:177px; height:65px; padding:5px; line-height:20px; border:1px solid #ccc; resize:none;}
+.desktop_window .window_clock_see label{ width:40px; text-align:right; margin-right:5px; line-height:26px; font-size:12px; font-family:"微软雅黑"; color:#000; display:inline-block; *display:inline; zoom:1; float:left;}
+.desktop_window .window_clock_select_con{height:24px;width:187px;position: relative;font-size: 12px; color: #000; float:left;}
+.desktop_window .select{height:24px;width:187px;position: relative;font-size: 12px; color: #000; float:left; border:1px solid #ccc; padding:0;}
+.desktop_window .window_clock_select_con1{ width:187px;}
+.desktop_window .window_clock_select_con2{ width:47px; margin-right:10px;}
+.desktop_window .window_clock_select_con1 .window_clock_txt{ width:167px;}
+.desktop_window .window_clock_select_con2 .window_clock_txt{ width:27px;}
+.desktop_window .window_clock_select_con1 li{ height:16px; line-height:16px; margin:7px 0; }
+.desktop_window .window_clock_select_con li{height:16px; line-height:16px; margin:3px 0;}
+.desktop_window .window_clock_select_con input{ vertical-align:middle; margin-right:5px;}
+.desktop_window .window_clock_btn,.window_clock_txt{float: left;height: 100%;line-height: 28px}
+.desktop_window .window_clock_select_con,.window_clock_list{border: 1px solid #ccc;}
+.desktop_window .window_clock_txt{width: 167px;}
+.desktop_window .window_clock_txt,.window_clock_list li{text-indent:5px;overflow: hidden;}
+.desktop_window .window_clock_btn{width: 20px;background:url(../images/alarm_img1.png) no-repeat center;cursor: pointer;}
+.desktop_window .window_clock_list{position: absolute;top: 25px;left: -1px;z-index: 88888;border-top: none;width: 100%;display: none;_top:29px; padding:0; margin:0; background:#fff; height:240px; overflow-y:auto;overflow-x:hidden;}
+.desktop_window .window_clock_list1{height:150px;}
+.desktop_window .window_clock_list li{list-style: none;height: 21px;line-height: 21px;cursor:default;_background:#fff; margin:7px 0; color:#000; font-size:12px; font-family:"微软雅黑";}
+.desktop_window .window_clock_list img{ vertical-align:middle; margin-right:7px;}
+.desktop_window .window_clock_list span{ color:#666; font-size:12px; font-family:"微软雅黑";height: 21px;line-height: 21px; display:inline-block; margin-top:5px; padding-left:10px;text-align:left;}
+.desktop_window .window_clock_con{padding:6px 60px 5px 20px; border-bottom:1px solid #c9c9c9; position:relative;}
+.desktop_window .window_clock_con p{color:#000; font-size:14px; font-family:"微软雅黑"; line-height:24px; padding:0; margin:0; text-align:left;}
+.desktop_window .window_clock_con span{ display:inline-block;color:#666; font-size:12px; font-family:"微软雅黑"; text-align:left; }
+.desktop_window .window_clock_con a{ position:absolute; width:15px; height:16px;}
+.desktop_window .window_clock_con .icon_edit{ background:url(../images/alarm_img5.png) no-repeat; top:17px; right:20px;}
+.desktop_window .window_clock_con .icon_del{ background:url(../images/alarm_img6.png) no-repeat; top:17px; right:45px;}
+.desktop_window .window_clock_bottom{ text-align:center; padding-bottom:30px;}
+.desktop_window .window_clock_bottom a{display:inline-block; width:160px; height:34px; text-align:center; line-height:34px; background:#2979f9; color:#fff; font-size:12px; font-family:"微软雅黑"; text-decoration:none;} 
+.desktop_window1 .window_header{ background:none;}
+.desktop_window1 .window_main{ background:#fff; border-radius:6px;} 
+
+/** 新建复合应用 **/
+.desktop_window .window_apply_form { clear:both; overflow:hidden; margin:10px 0 20px 10px;}
+.desktop_window .window_apply_form dl { clear:both; display:block; margin:20px 0; overflow:hidden; }
+.desktop_window .window_apply_form dt,.desktop_window .window_apply_form dd { float:left; display:block;}
+.desktop_window .window_apply_form dt { margin:3px 10px 0 0; width:70px; text-align:right;}
+.desktop_window .window_apply_form dd { width:560px;}
+.desktop_window .window_apply_form input { vertical-align:middle;}
+.desktop_window .window_apply_form .window_tips { margin-left:10px; color:#888;}
+.desktop_window .window_apply_form .window_apply_list {height:200px;clear:both; overflow:hidden; width:560px; margin:-13px 0 0 -13px; max-height:300px;}
+.desktop_window .window_apply_form .window_apply_list li { float:left; display:block; width:32px; height:32px; margin:15px; position:relative;}
+.desktop_window .window_apply_form .window_apply_list li .sign { position:absolute; display:block; width:22px; height:22px;background:url(../images/desktop_con_sign.png) 0 0 no-repeat; top:19px; left:20px;}
+.desktop_window .window_apply_form .window_apply_list li img { height: 32px; width: 32px;}
+.desktop_window .window_apply_form .window_tips { margin-left:10px; color:#888;}
+.highlight{color:#EA0000;font-weight:bold}
+.desktop_layer .layer_button .layer_column .sign {
+    background: url("../images/desktop_apply_sign.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 14px;
+    left: 10px;
+    position: absolute;
+    top: 4px;
+    width: 14px;
+}
+.desktop_layer .layer_button .layer_column .sign_lock {
+    background: url("../images/desktop_apply_sign_lock.png") no-repeat 0 0;
+    display: block;
+    height: 48px;
+    left: 11px;
+    position: absolute;
+    top: 5px;
+    width:48px;
+}
+ AGUIDXB3AL2AQHJ
+ AGUIDMHZ16K92B6
+
+/** 新建复合应用 添加 **/
+.desktop_window .window_header_return { width:30px;text-align:left; margin-left:20px; background:url(../images/window_header_return.png) no-repeat 0 12px; padding-left:20px; cursor:pointer;}
+.desktop_window .window_apply { overflow:hidden;  }
+.desktop_window .window_apply_title { font-size:12px; color:#010101; height:47px; line-height:47px; border-bottom:1px solid #dcdcdc; padding-left:20px;}
+.desktop_window .window_apply_result{ font-size:12px; color:#010101; height:47px; line-height:47px; border-bottom:1px solid #dcdcdc; padding-left:20px;}
+.desktop_window .window_apply_result span{color: #EA0000;}
+.desktop_window .window_apply_con { overflow:auto; }
+.desktop_window .window_apply_con li { position:relative; clear:both; display:block; padding:8px 20px; overflow:hidden; cursor:pointer; }
+.desktop_window .window_apply_con li:hover { background:#eff9ff;}
+.desktop_window .window_apply_con li h5 { float:left; margin-left:8px; width:87px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }
+.desktop_window .window_apply_con li img { float:left; width:24px; height:24px; vertical-align:middle; margin-top:-2px;}
+.desktop_window .window_apply_con li .sign { position:absolute; display:block; width:22px; height:22px; background:url(../images/desktop_con_sign.png) 0 0 no-repeat; left:16px; top:13px; }
+.desktop_window .window_apply_con li .oper { float:right; margin:3px 0 0 0px; display:none;}
+.desktop_window .window_apply_con li .oper a { float:left; display:block; width:13px; height:13px; margin:0 5px; }
+.desktop_window .window_apply_con li .oper_bottom { background:url(../images/desktop_apply_oper.png) no-repeat -20px 0;}
+.desktop_window .window_apply_con li .oper_top { background:url(../images/desktop_apply_oper.png) no-repeat -20px -20px;}
+.desktop_window .window_apply_con li .oper_up { background:url(../images/desktop_apply_oper.png) no-repeat -20px -40px;}
+.desktop_window .window_apply_con li .oper_down { background:url(../images/desktop_apply_oper.png) no-repeat -20px -60px;}
+.desktop_window .window_apply_con li .oper_del { background:url(../images/desktop_apply_oper.png) no-repeat -20px -80px;}
+.desktop_window .window_apply_con li:hover .oper { display:block;}
+.desktop_window .window_apply_con li .oper_bottom:hover { background-position:0 0;}
+.desktop_window .window_apply_con li .oper_top:hover { background-position:0 -20px;}
+.desktop_window .window_apply_con li .oper_up:hover { background-position:0 -40px;}
+.desktop_window .window_apply_con li .oper_down:hover { background-position:0 -60px;}
+.desktop_window .window_apply_con li .oper_del:hover { background-position:0 -80px;}
+.desktop_window .window_apply_left { float:left; display:block; width:41%; }
+.desktop_window .composite_li_list { height: 230px;overflow: auto;}
+.desktop_window .window_apply_right { float:left; display:block; width:58%;}
+.desktop_window .window_apply_middle { float:left; display:block; width:1px ;height: 100%; border-right:1px solid #dcdcdc;}
+.desktop_window .window_header_return { width:30px;text-align:left; margin-left:20px; background:url(../images/window_header_return.png) no-repeat 0 12px; padding-left:20px; cursor:pointer;}
+/*通讯录树*/
+.desktop_window .window_tree_list { margin:10px 0;  height:425px; overflow:auto; width:182px; }
+.desktop_window .q_tree { position:relative;}
+.desktop_window .q_tree .q_tree_bg { display:block;position:absolute;left:0;top:-1000px;z-index:0;width:100%; height:27px;background:#2979f9;}
+.desktop_window .q_tree .q_tree_ul{ padding-left:13px; display:none;}
+.desktop_window .q_tree .q_tree_root { position:relative;z-index:1;}
+.desktop_window .q_tree .q_tree_node { width:100%; clear:both; display:table;}
+.desktop_window .q_tree .q_tree_info { float:left; white-space:nowrap;}
+.desktop_window .q_tree .q_tree_li .q_tree_info .q_tree_active{ }
+.desktop_window .q_tree .q_tree_li .q_tree_info a { display:inline-block;line-height:28px; text-decoration:none;color:#333;vertical-align:middle;text-align:left;width:8px; height:28px;margin-right:5px; }
+.desktop_window .q_tree .q_tree_leaf .q_tree_info .q_tree_active { background:url(../images/icon_show.png) no-repeat center;}
+.desktop_window .q_tree .q_tree_leaf .q_tree_none .q_tree_info a{ background:none;}
+.desktop_window .q_tree .q_tree_leaf .q_tree_info  a {background:url(../images/icon_show.png) no-repeat center;}
+.desktop_window .q_tree .q_tree_info .q_tree_li { white-space:nowrap;}
+.desktop_window .q_tree .q_tree_info .q_tree_node_indent em { display: inline-block; float:left; height:25px; margin-left:10px;}
+.desktop_window .q_tree .q_tree_info .q_tree_node_name { display:inline-block; vertical-align:middle; font-size:12px; font-family:"微软雅黑"; color:#000;}
+.desktop_window .q_tree .q_tree_info .q_tree_node_input { display:inline-block; margin:-1px 3px 0 0; vertical-align:middle;}
+.desktop_window .q_tree .q_tree_oper { float:left;}
+.desktop_window .q_tree1 .q_tree_ul { padding-left:0;} 
+.desktop_window .q_tree1 .q_tree_root { padding-left:0;}
+.desktop_window .q_tree_show .q_tree_node_name { display:block; line-height:25px; padding-left:25px;}
+
+
+/*通讯录*/
+.desktop_window .window_select_con{margin:10px 0;  height:425px; overflow-y:auto; overflow-x:hidden;}
+.desktop_window .window_none_con{ margin:10px 0;  height:425px; overflow-y:auto; overflow-x:hidden; text-align:center; line-height:370px; font-size:14px; font-family:"微软雅黑"; color:#333;}
+.desktop_window .window_select_con .window_select_title{ line-height:27px; padding-left:30px; background:url(../images/desktop_menu_line.png) 0 100% repeat-x; color:#7d7b7c; font-size:12px; font-family:"微软雅黑";}
+.desktop_window .window_select_con li{ line-height:26px;  font-size:12px; font-family:"微软雅黑"; color:#000; padding-left:30px;}
+.desktop_window .window_personnel .window_select_title{ margin:40px 0 13px 0;}
+.desktop_window .window_department .window_select_title{ margin-top:15px;}
+.desktop_window .window_personnel span{ margin-left:30px;}
+.desktop_window .window_tables{overflow:auto;} 
+.desktop_window .window_tables table{width:100%; overflow:hidden; border-collapse:collapse; border-spacing:0;}
+.desktop_window .window_tables table th{ line-height:37px; font-size:12px; font-family:"微软雅黑"; color:#000;padding:0 5px;}
+.desktop_window .window_tables table th{ text-align:center;}
+.desktop_window .window_table_com{ height:370px; overflow:auto; padding-bottom:20px;}
+.desktop_window .window_table_com table{ width:100%;}
+.desktop_window .window_table_com table tr{ padding-right:20px;}
+.desktop_window .window_table_com table td{line-height:37px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; text-align:center; font-size:12px; font-family:"微软雅黑"; color:#000;padding:0 5px;}
+.desktop_window .window_tables table td{ text-align:center;}
+.desktop_window .window_table_com table .odd{ background:#e5effe;}
+/*==设置==*/
+
+.desktop_window .window_config_main{ height:227px; padding:20px 20px 10px;  overflow-y:auto; overflow-x:hidden;}
+.desktop_window .window_config_con{ height:28px; line-height:28px; font-size:12px; font-family:"微软雅黑"; color:#333; margin-top:15px;}
+.desktop_window .window_config_con label{ width:150px; display:inline-block; *display:inline; zoom:1; padding-right:15px; text-align:right;}
+.desktop_window .window_config_con .checked{ margin-right:10px;}
+.desktop_window .window_config_con .resetting{ display:inline-block;*display:inline; zoom:1; width:160px; height:27px; background:#d8e5fb; text-align:center; line-height:27px; border-radius:2px;}
+/*重置桌面弹出框*/
+.desktop_window .config_shade_con{ padding-top:38px;  overflow-y:auto; overflow-x:hidden;}
+.desktop_window .config_shade_con dt{ width:89px; height:89px; float:left; overflow:hidden; margin:0 44px 0 32px;}
+.desktop_window .config_shade_con dd h3{ font-size:14px; font-family:"微软雅黑"; color:#333; font-weight:normal; line-height:30px;}
+.desktop_window .config_shade_con dd span{ font-size:12px; font-family:"微软雅黑"; color:#333; line-height:60px;}
+/*==更新提醒弹出框==*/
+.desktop_window .update_shade_con{ height:184px; padding-top:25px;}
+.desktop_window .update_shade_con dt{ width:100px;  float:left; overflow:hidden; margin:35px 30px 0 32px;}
+.desktop_window .update_shade_con dd h3{ font-size:12px; font-family:"微软雅黑"; color:#333; font-weight:normal; line-height:25px;}
+.desktop_window .update_shade_con dd div{ font-size:12px; font-family:"微软雅黑"; color:#333; line-height:25px;}
+.desktop_window .update_shade_con .move{ text-decoration:underline; color:#0049bf;}
+
+.desktop_window .update_small{ padding:15px 25px 0 25px;}
+.desktop_window .update_small p{font-size:12px; font-family:"微软雅黑"; color:#333; text-indent:25px; line-height:25px;}
+.desktop_window .update_small .erect{ display:inline-block; background:#2A79FA; width:110px; height:25px; line-height:25px; text-align:center; font-size:14px; font-family:"微软雅黑";color:#fff; margin:5px 0 0 45px;}
+.desktop_window .update_small .move{text-decoration:underline; color:#0049bf; margin-left:10px;}
+/*==开始下载==*/
+.desktop_window .download_img{ height:213px; overflow:hidden;}
+.desktop_window .download_img img{ width:100%; height:100%;}
+.desktop_window .download_progress{ background-color:#c9c9c9; height:5px;}
+.desktop_window .download_progress span{ display:inline-block; *display:inline; zoom:1; height:5px; background-color:#3eaf1c; float:left;}
+.desktop_window .download_info{ height:50px; line-height:48px; font-size:14px; font-family:"微软雅黑"; color:#333; padding:0 10px 0 17px; }
+.desktop_window .download_info span{ float:right;}
+/*==更新完成==*/
+.desktop_window .complete_shade_con{ height:144px; padding-top:65px;}
+.desktop_window .complete_shade_con dt{ width:100px; float:left; overflow:hidden; margin:0px 30px 0 32px;}
+.desktop_window .complete_shade_con dd h3{ font-size:12px; font-family:"微软雅黑"; color:#333; font-weight:normal; line-height:99px;}
+/** 引导页 **/
+.desktop_welcome { background-color:rgba(0, 0, 0,0.8); position:absolute; width:100%; height:100%; z-index:99;}
+.desktop_welcome .welcome_pic { width:1024px; display:block; text-align:center; margin:0 auto; position:relative;}
+.desktop_welcome .welcome_btn { position:absolute; z-index:999; width:135px; height:35px; line-height:35px; text-align:center; bottom:55px; left:69%;}
+.desktop_welcome .welcome_btn a { background:url(../images/desktop_welcome_btn.png) no-repeat 0 0; display:block; font-family:"微软雅黑"; color:#fff; font-size:18px; font-weight:bold;}
+.desktop_welcome .welcome_btn a:hover,.desktop_welcome .welcome_btn a:active { background:url(../images/desktop_welcome_btn.png) no-repeat 0 -45px; }
+.desktop_welcome .close{width:50px; height:50px; background:url(../images/close_icon.png) no-repeat; position:absolute; right:0; top:0; cursor:pointer;}
+.desktop_welcome .close:hover{ background:url(../images/close_hover.png) no-repeat;}
+.desktop_welcome .welcome_bullets { position:absolute; z-index:999; left:45%; bottom:68px;}
+.desktop_welcome .welcome_bullets a { float:left; display:block; background:url(../images/desktop_welcome_bullets.png) no-repeat 0 0; width:14px; height:14px; margin:0 5px;}
+.desktop_welcome .welcome_bullets a.active { background:url(../images/desktop_welcome_bullets.png) no-repeat 0 -24px; }
+.desktop_welcome .welcome_check { position:absolute; z-index:999; left:17%; bottom:65px; background:url(../images/desktop_welcome_check1.png) no-repeat 0 0; width:188px; height:18px; }
+.desktop_welcome .welcome_check_checked { background:url(../images/desktop_welcome_check2.png) no-repeat 0 0; }
+.desktop_welcome .welcome_check a { display:block; width:18px; height:18px;}
+
+/*==桌面侧边栏==*/
+.desktop_sidebar { position:absolute; top:0px; width:150px; background:rgba(0,0,0,0.45); border-radius:5px;border:1px solid; border-color:rgba(255,255,255,0.1); z-index:99;}
+.desktop_sidebar .desktop_sidebar_title { background:rgba(0,0,0,0.3); height:33px; line-height:33px; padding-left:10px; border-bottom:1px solid; border-color:rgba(255,255,255,0.2); color:#ecedee; font-size:14px;font-family:"微软雅黑"; }
+.desktop_sidebar .desktop_sidebar_list{padding-top:5px;padding-bottom: 5px;}
+.desktop_sidebar .desktop_sidebar_list li { height:24px; line-height:20px; padding:7px 10px;}
+.desktop_sidebar .desktop_sidebar_list li a { color:#fff; font-size:12px;font-family:"微软雅黑"; text-decoration:none; }
+.desktop_sidebar .desktop_sidebar_list li img { vertical-align:middle; width:24px; height:24px; margin-right:10px;}
+.desktop_sidebar .desktop_sidebar_item { padding-bottom:5px;}
+.desktop_sidebar .desktop_sidebar_item1 .desktop_sidebar_title { border-top:1px solid; border-color:rgba(255,255,255,0.2); }
+
+/*==桌面==*/
+.desktop_computer { display:none; width:100%; height:100%;}
+.desktop_computer img { width:100%; height:100%;}
+.desktop_computer .computer_btn { width:70px; padding:5px 0; position:absolute; z-index:9; border:1px solid transparent;}
+.desktop_computer .computer_btn:hover { background:rgba(225,225,225,0.1); border:1px solid; border-radius:4px; border-color:rgba(225,225,225,0.4);}
+.desktop_computer .computer_btn.active { background:rgba(225,225,225,0.3); border:1px solid; border-radius:4px; border-color:rgba(225,225,225,0.6);}
+.desktop_login { font-family:"微软雅黑"; position:absolute; z-index:2222; top:18%; background:url(../images/desktop_login.png) no-repeat 0 0; width:316px; height:386px; display:none;}
+.desktop_login .desktop_login_title { clear:both; height:120px; overflow:hidden;}
+.desktop_login .desktop_login_title .close { float:right; margin:6px 8px 0 0; width:25px; height:25px; } 
+.desktop_login .desktop_login_form { position:relative; clear:both; width:262px; margin:0 auto; margin-top:50px;}
+.desktop_login .desktop_login_form li { clear:both; display:block; margin-bottom:10px; overflow:hidden;}
+.desktop_login .desktop_login_form li .input { border:0; height:40px; line-height:40px; margin:1px 0 0 42px; padding:0 5px; vertical-align:middle; font-size:14px; }
+.desktop_login .desktop_login_form li.desktop_login_user { background:url(../images/desktop_login_user.gif) no-repeat 0 0; width:262px; height:42px; }
+.desktop_login .desktop_login_form li.desktop_login_user .input { width:208px;}
+.desktop_login .desktop_login_form li.desktop_login_password { background:url(../images/desktop_login_password.gif) no-repeat 0 0; width:262px; height:42px; }
+.desktop_login .desktop_login_form li.desktop_login_password .input { width:208px;}
+.desktop_login .desktop_login_form li.desktop_login_oper { clear:both; overflow:hidden; margin-top:12px;}
+.desktop_login .desktop_login_form li.desktop_login_oper input { vertical-align:middle; margin:-3px 5px 0 0;}
+.desktop_login .desktop_login_tips { position:absolute; background:url(../images/desktop_login_tips.png) no-repeat 0 0; width:260px; height:35px; line-height:28px; margin:13px 0 0 28px;} 
+.desktop_login .desktop_login_tips a { display:block; padding:0 0 0 45px; color:#4c4b43;}
+.desktop_login .desktop_login_btn { display:block; margin:0 auto; margin-top:10px; background:url(../images/desktop_login_btn.gif) no-repeat 0 0; width:260px; height:40px; line-height:40px; text-align:center;}
+.desktop_login .desktop_login_btn a { display:block; color:#fff; font-size:16px; font-weight:bold; text-decoration:none; letter-spacing:10px;}
+
+/*==自定义背景==*/
+.desktop_window .window_skin { display:block; overflow:hidden; margin:15px;}
+.desktop_window .window_skin_pic { float:left; display:block;}
+.desktop_window .window_skin_pic img { width:280px; height:157px; }
+.desktop_window .window_skin_con { float:left; margin:-15px 0 0 15px; }
+.desktop_window .window_skin_con li { color:#777; margin:15px 0; }
+.desktop_window .window_skin_con li a { color:#107eee; text-decoration:underline;}
+.desktop_window .window_skin_con li img { vertical-align:middle; margin:-3px 5px 0 0;}
+.desktop_window .select_trigger { position:relative;}
+.desktop_window .select_trigger .select_input { float:left; display:block; height:24px; line-height:24px; border:1px solid #ccc; border-right:0; width:160px; padding:0 5px; color:#777; }
+.desktop_window .select_trigger .select_btn { float:left; display:block; background:url(../images/alarm_img1.png) no-repeat 50% 10px; width:25px; height:24px; border:1px solid #ccc; border-left:0; }
+.desktop_window .select_list { position:absolute; border:1px solid #ccc; width:195px; background:#fff; margin-top:24px; display:none; }
+.desktop_window .select_list li { margin:0; padding:5px 10px;}
+.desktop_window .select_list li a { color:#777; text-decoration:none;}
+
+
+/*==向导提示==*/
+.guid_tip{position:absolute;display:none;z-index:999999;width: 269px;height: 112px;}
+.guid_tip1{background: url(../images/tip1.png);left:507px;top:269px;}
+.guid_tip2{background: url(../images/tip2.png);left:656px;top:279px;}
+.guid_tip3{background: url(../images/tip3.png);left:659px;top:514px;}
+/*==办公位置选择==*/
+.desktop_window .window_apply_form .window_clock_see { margin-right:15px; float:left;}
+.desktop_window .window_apply_form .window_remark{ clear:both; line-height:40px; font-size:12px; color:#333; font-family:"微软雅黑"; margin-bottom:15px;}
+/*==桌面选择==*/
+.desktop_window .window_desktop_box{ height:77px; padding:30px;}
+.desktop_window .window_desktop_box a{display:inline-block; width:206px; height:92px;}
+.desktop_window .window_desktop_box .def{ background:url(../images/desktop_one.png) no-repeat;}
+.desktop_window .window_desktop_box .def:hover{ background:url(../images/desktop_one_hover.png) no-repeat;}
+.desktop_window .window_desktop_box .custom{ background:url(../images/desktop_two.png) no-repeat; margin-right:4px;}
+.desktop_window .window_desktop_box .custom:hover{ background:url(../images/desktop_two_hover.png) no-repeat; margin-right:4px;}
+
+/*==应用中心禁止拖拽样式==*/
+.ui-state-disabled, .ui-widget-content .ui-state-disabled, .ui-widget-header .ui-state-disabled{opacity: 1;}
+
+/*==办公位置选择==*/
+.desktop_window .window_apply_form .window_clock_see { margin-right:15px; float:left; padding-top:0;}
+.desktop_window .window_apply_form .window_remark{ clear:both; line-height:40px; font-size:12px; color:#333; font-family:"微软雅黑"; padding-left:15px;}
+.desktop_window .window_apply_form .identity_label{ line-height:25px; clear:both;}
+.desktop_window .window_apply_form .identity_label span{ display:inline-block; color:#F14949; padding:0 5px;}
+.desktop_window .window_apply_form .window_sel{ margin-bottom:10px; height:25px; padding-left:15px;}
+.desktop_window .window_apply_form .identity_radio{ display:inline-block;}
+.desktop_window .window_apply_form .identity_radio .radio{ margin-left:10px;}
+.desktop_window .window_btn_wrap .start_but{ display:inline-block; width:160px; height:36px; text-align:center; line-height:36px; background:url(../images/start_but.png) no-repeat; font-size:14px; font-family:"微软雅黑"; color:#fff;margin-top:10px;}
+.desktop_window .window_btn_wrap1{ text-align:center; padding: 0px 0;}
+
+/*==常用系统选择==*/
+.desktop_select_system .common_system .window_con_list{ margin-left:0; padding:10px 0px 0px 10px;}
+.desktop_select_system .common_system .window_con_list li{height:85px;}
+.desktop_select_system .remark{ line-height:35px; padding-left:25px; font-size:12px; font-family:"微软雅黑"; color:#636362;}
+.desktop_select_system .window_con_list li{cursor: pointer;}
+
+/*==js迁移样式==*/
+.desktop_selectsystem .maskDiv{background-color: #000000; opacity: 0.7; width: 100%;height: 100%; position: absolute;top: 0px; left: 0px;z-index: 9999;}
+.desktop_selectsystem .desktop_select_system{width:580px;height:350px;z-index: 10000;}
+.desktop_selectsystem .desktop_select_system .window_main .window_con_height{height:220px;}

@@ -1,0 +1,23 @@
+{
+    "background": "green",
+    "canResized": false,
+    "canModify": false,
+    "titleDrag": false,
+    "Name": "业务费用查询",
+    "AppID": "097",
+    "IconPath": "http: //portal3.aostar.sgcc.com.cn/resources/upload/8a6e50704841fae8014843e4cd020054.png",
+    "AppIconPath": "http: /portal3.aostar.sgcc.com.cn/resources/upload/8a6e50704841fae801484436f16201f1.png",
+    "Index": 0,
+    "AppCommand": "MVP.WebBrowser.exe",
+    "param": "http: /10.238.208.231: 7011/content/static/framework/bzjf/sso_cs_bzjf.jsp?userId=dftest＆name=cmp_acchg_amt＆event=show\u003c\u003c\u003e\u003ehttp: //yx.dr.sgcc.com.cn",
+    "AppType": 0,
+    "OpenType": 0,
+    "SystemID": "yx_dr",
+    "id": "M1410775528790",
+    "position": {
+        "width": 2,
+        "height": 2,
+        "top": 7,
+        "left": 13
+    }
+}

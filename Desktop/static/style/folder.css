@@ -1,0 +1,71 @@
+﻿.g_file .title{ width:100%; height:33px; border-bottom:1px solid rgba(255, 255, 255, 0.1); background:rgba(0,0,0,0.3) !important; line-height:33px;
+    position:relative;
+    font-size:14px;
+    font-family:"微软雅黑"; color:#fff; text-shadow:1px 1px 1.5px #000000;}
+.g_file .title .buts{ display:none;position:absolute; right:35px; top:10px;}
+.g_file .title .showway{position:absolute; cursor:pointer;right:53px; top:1px;width:13px; height:13px;display:none;}
+.g_file .title .showway img{width:100%;height:100%;}
+.g_file .title .buts .pack_up{ width:14px; height:14px; background:url("../images/desktop_folder_icon1.png") no-repeat; display:block;}
+.g_file .title .btn_lock {z-index: 2;cursor: pointer; position:absolute;;right:15px; top:9px; width:14px; height:14px; background:url("../images/desktop_folder_open.png") no-repeat;}
+.g_file{width:200px;height:270px; background:rgba(0,0,0,0.65) !important; border-radius:5px;border:1px solid; border-color:rgba(255,255,255,0.10);}
+.g_file .list_box{height:100%;width:100%;overflow-y:auto;}
+.g_file .title .text_name{width: 150px; height:25px; cursor:context-menu;color:#fff; line-height:25px;border:0 none; outline: none; background: none; text-align: left;margin-left:10px;}
+.g_file .title .text_click{ border:1px solid #ccc; color:#333; text-align: center; background: #fff;}
+
+.control_btn_list{
+    /*margin-left: 2px;*/
+    margin-top: 2px;
+	overflow-x:hidden;
+}
+.desktop_main .control_btn_list .layer_del{right:10px;}
+.desktop_main .control_btn_list .layer_button{padding:1px;}
+.desktop_main .control_btn_list .layer_button .layer_column{ border:none;height:20px;width:auto;padding:4px;overflow:hidden;text-overflow: ellipsis;white-space: nowrap;}
+.desktop_main .control_btn_list .layer_button .layer_column h4{text-align:left;line-height: 23px;}
+.desktop_main .control_btn_list .layer_button .layer_column p{float:left;margin-right:10px;}
+.desktop_main .control_btn_list .layer_button .layer_column p img{width:20px;height:20px;/*margin-top:-3px;*/}
+
+.desktop_layer .control_btn_list .layer_button .layer_column .sign_lock {
+    background: url("../images/desktop_apply_sign_lock1.png") no-repeat 0 0;
+    display: block;
+    height: 20px;
+    left: 4px;
+    position: absolute;
+    top: 4px;
+    width:20px;
+}
+.FolderBigBox{
+  background: none repeat scroll 0 0 rgba(0, 0, 0, 0.65) !important;
+}
+.desktop_layer .FolderMin .layer_column h4 {
+    position: relative;
+    top:0;
+}
+::-webkit-scrollbar {  
+ width: 17px;
+ height: 20px;  
+} 
+::-webkit-scrollbar-track,  
+::-webkit-scrollbar-thumb {  
+  border-radius: 999px;  
+  border: 5px solid transparent;  
+}  
+::-webkit-scrollbar-track {  
+
+} 
+::-webkit-scrollbar-thumb {  
+  min-height: 20px;  
+  background-clip: content-box;  
+  box-shadow: 0 0 0 5px #454B4D inset;
+}  
+  
+::-webkit-scrollbar-corner {  
+  background: transparent;  
+}
+/*==js迁移样式==*/
+.desktop_layer .FolderMin .layer_column .FolderBox {position: relative;top:-2px;margin: 0 auto;width:50px;height:50px;border:0px solid;;border-color:rgba(255,255,255,0.20);border-radius:5px;background:rgba(0,0,0,0.3);}
+.desktop_layer .FolderMin .layer_column .FolderBox div{width:16px;height:16px;border:0px solid;float:left;margin:5px 4px 4px 5px;}
+.desktop_layer .FolderBigBox{border:1px solid;border-color:rgba(255,255,255,0.3);border-radius:5px;background:rgba(0,0,0,1);}
+.desktop_layer .FolderBigBox .title{width: 100%;height: 33px;position: relative;border-bottom: 1px solid rgba(255, 255, 255, 0.1); background: rgba(0,0,0,0.2);line-height: 33px; }
+.desktop_layer .FolderBigBox .title .min_folder_swicth{position: absolute;cursor: pointer;right: 35px;top: 1px;}
+.desktop_layer .FolderBigBox .title .min_folder_max{position: absolute;cursor: pointer;right: 15px;top: 1px;}
+.desktop_layer .FolderBigBox .title .titleZC{color:white;width:120px;height:32px;position:absolute;top:5px;margin-left: 10px;line-height: 25px;}
